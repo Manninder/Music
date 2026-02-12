@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #272424;
+    color: white;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 45px;
+    background-color: black;
+}
+
+.search-bar{
+    height: 10px;
+    margin-bottom: 12px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #1db954; /* Spotify-ish green */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #1db954;
+}
+
+.container{
+    min-height: 650px;
+    background-color: rgb(73, 91, 107);
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    margin: 23px auto;
+    width: 70%;
+    border-radius: 15px;
+    padding: 15px;
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bottom{
+    position: sticky;
+    height: 90px;
+    background-color: rgb(19, 18, 17);
+    color: rgb(172, 171, 171);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icons{
+    margin-top: 10px;
+}
+
+.icons i{
+    cursor: pointer;
+}
+
+#myProgressBar{
+    width: 900px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.songItem{
+    height: 50px;
+    display: flex;
+    background-color: rgb(165, 150, 150);
+    width: 400px;
+    color: black;
+    margin: 12px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.songItem img{
+    width: 42px;
+    margin: 0 10px 0;
+    border-radius: 24px;
+}
+
+.songItem span{
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.timeStamp{
+    margin: 0 12px;
+}
+
+.timeStamp i{
+    cursor: pointer;
+}
+
+.songInfo{
+    position: absolute;
+    left: 300px;
+    margin-top: 30px;
+    align-items: justify;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+}
+
+.songInfo img{
+    opacity: 0;
+    transition: opacity 0.8s ease-in;
+    height: auto;
+}
