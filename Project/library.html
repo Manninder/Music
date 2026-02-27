@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library | MelodyStream</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="library.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-headphones-simple"></i>
+                MELODY<span>STREAM</span>
+            </div>
+            
+            <div class="mobile-menu-btn" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Discover.html">Discover</a></li>
+                <li><a href="Subscription.html">Subscription</a></li>
+                <li><a href="Library.html" class="active">Library</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search artists, songs...">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="library-container">
+        
+        <section class="library-header">
+            <div class="user-profile">
+                <div class="profile-img">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="profile-info">
+                    <p>Profile</p>
+                    <h1>Your Library</h1>
+                    <span>12 Playlists • 148 Liked Songs</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="library-tabs">
+            <button class="tab-btn active">Playlists</button>
+            <button class="tab-btn">Podcasts</button>
+            <button class="tab-btn">Albums</button>
+            <button class="tab-btn">Artists</button>
+        </div>
+
+        <section class="library-grid-section">
+            <div class="card-container">
+                <a href="#" class="card liked-songs-card">
+                    <div class="liked-content">
+                        <h2>Liked Songs</h2>
+                        <p>148 liked songs</p>
+                    </div>
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                </a>
+
+                <a href="#" class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=500&q=80" alt="Hip Hop Mix">
+                    </div>
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                    <h3>Hip Hop Mix</h3>
+                    <p>By MelodyStream</p>
+                </a>
+
+                <a href="#" class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=300&q=80" alt="Workout">
+                    </div>
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                    <h3>Beast Mode</h3>
+                    <p>By MelodyStream</p>
+                </a>
+
+                <a href="#" class="card">
+                    <div class="card-img">
+                        <img src="lofi.jpeg" alt="Lofi">
+                    </div>
+                    <div class="play-overlay"><i class="fa-solid fa-play"></i></div>
+                    <h3>Late Night Lofi</h3>
+                    <p>By You</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="track-list-section">
+            <h2 class="section-title">Recently Played</h2>
+            
+            <div class="track-list">
+                <div class="track-header">
+                    <div class="t-num">#</div>
+                    <div class="t-title">Title</div>
+                    <div class="t-album">Album</div>
+                    <div class="t-time"><i class="fa-regular fa-clock"></i></div>
+                </div>
+
+                <div class="track-item">
+                    <div class="t-num"><span class="num">1</span><i class="fa-solid fa-play play-icon"></i></div>
+                    <div class="t-title">
+                        <img src="Diljit/img.jpg" onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=100&q=80'" alt="Cover">
+                        <div class="song-info">
+                            <h4>G.O.A.T.</h4>
+                            <p>Diljit Dosanjh</p>
+                        </div>
+                    </div>
+                    <div class="t-album">G.O.A.T.</div>
+                    <div class="t-time">3:45</div>
+                </div>
+
+                <div class="track-item">
+                    <div class="t-num"><span class="num">2</span><i class="fa-solid fa-play play-icon"></i></div>
+                    <div class="t-title">
+                        <img src="Sidhu/img.jpg" onerror="this.src='https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=100&q=80'" alt="Cover">
+                        <div class="song-info">
+                            <h4>Levels</h4>
+                            <p>Sidhu Moose Wala</p>
+                        </div>
+                    </div>
+                    <div class="t-album">No Name</div>
+                    <div class="t-time">3:20</div>
+                </div>
+
+                <div class="track-item">
+                    <div class="t-num"><span class="num">3</span><i class="fa-solid fa-play play-icon"></i></div>
+                    <div class="t-title">
+                        <img src="Amrit/img.jpg" onerror="this.src='https://images.unsplash.com/photo-1493225457124-a1a2a5f5f92b?auto=format&fit=crop&w=100&q=80'" alt="Cover">
+                        <div class="song-info">
+                            <h4>Bambiha Bole</h4>
+                            <p>Amrit Maan, Sidhu Moose Wala</p>
+                        </div>
+                    </div>
+                    <div class="t-album">Bambiha Bole</div>
+                    <div class="t-time">4:12</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const toggleBtn = document.getElementById('menuToggle');
+        const nav = document.getElementById('navLinks');
+        if(toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

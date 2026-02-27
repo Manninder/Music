@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription | MelodyStream</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="sub.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-headphones-simple"></i>
+                MELODY<span>STREAM</span>
+            </div>
+            
+            <div class="mobile-menu-btn" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Discover.html">Discover</a></li>
+                <li><a href="sub.html" class="active">Subscription</a></li>
+                <li><a href="library.html">Library</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="subscription-container">
+        
+        <section class="pricing-header">
+            <h1>Listen without limits.</h1>
+            <p>Choose the plan that fits your vibe. Cancel anytime.</p>
+        </section>
+
+        <section class="pricing-grid">
+            
+            <div class="pricing-card">
+                <h3>Free</h3>
+                <p class="plan-desc">For casual listeners</p>
+                <div class="price">
+                    <h2>₹0</h2>
+                    <span>/ month</span>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Ad-supported listening</li>
+                    <li><i class="fa-solid fa-check"></i> Standard audio quality</li>
+                    <li><i class="fa-solid fa-check"></i> Play on any device</li>
+                    <li class="disabled"><i class="fa-solid fa-xmark"></i> No offline listening</li>
+                    <li class="disabled"><i class="fa-solid fa-xmark"></i> Limited skips</li>
+                </ul>
+                <button class="btn-outline-sub">Current Plan</button>
+            </div>
+
+            <div class="pricing-card popular">
+                <div class="popular-badge">Most Popular</div>
+                <h3>Premium</h3>
+                <p class="plan-desc">For true music lovers</p>
+                <div class="price">
+                    <h2>₹119</h2>
+                    <span>/ month</span>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> Ad-free music listening</li>
+                    <li><i class="fa-solid fa-check"></i> High fidelity audio (320kbps)</li>
+                    <li><i class="fa-solid fa-check"></i> Download to listen offline</li>
+                    <li><i class="fa-solid fa-check"></i> Unlimited skips</li>
+                    <li><i class="fa-solid fa-check"></i> Listen with friends in real-time</li>
+                </ul>
+                <button class="btn-primary-sub">Get Premium</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3>Family</h3>
+                <p class="plan-desc">Up to 6 Premium accounts</p>
+                <div class="price">
+                    <h2>₹179</h2>
+                    <span>/ month</span>
+                </div>
+                <ul class="features-list">
+                    <li><i class="fa-solid fa-check"></i> 6 Premium accounts</li>
+                    <li><i class="fa-solid fa-check"></i> Block explicit music</li>
+                    <li><i class="fa-solid fa-check"></i> Ad-free music listening</li>
+                    <li><i class="fa-solid fa-check"></i> Download to listen offline</li>
+                    <li><i class="fa-solid fa-check"></i> Family Mix playlist</li>
+                </ul>
+                <button class="btn-outline-sub">Get Family</button>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="mobile.js"></script>
+    <script>
+        const toggleBtn = document.getElementById('menuToggle');
+        const nav = document.getElementById('navLinks');
+        if(toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
+</html>

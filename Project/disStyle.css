@@ -1,0 +1,352 @@
+:root {
+    /* --- Exact Colors from Screenshot --- */
+    --bg-main: #0c101b;             /* Deep Dark Navy Background */
+    --bg-surface: #151a28;          /* Lighter Navy for Cards & Search */
+    --bg-surface-hover: #1f273b;    /* Hover state for cards */
+    
+    --accent-color: #c75cff;        /* Neon Purple/Magenta Accent */
+    --accent-gradient: linear-gradient(90deg, #a855f7, #d946ef);
+    --accent-glow: rgba(199, 92, 255, 0.4);
+    
+    --text-primary: #ffffff;        /* Pure White */
+    --text-secondary: #94a3b8;      /* Slate Gray for subtext */
+    
+    --border-radius-lg: 16px;       /* Rounded corners seen in image */
+    --border-radius-sm: 8px;
+    --transition-speed: 0.3s ease;
+}
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed);
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+   HEADER & NAVBAR (Shared)
+   ========================================================================== */
+header {
+    background-color: var(--bg-main);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Logo on left, Links on right */
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 80px; /* Enforce height to prevent shifting */
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+}
+
+/* Logo icon and STREAM text in purple */
+.logo i, .logo span {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem; /* Space between links */
+}
+
+.nav-links li a {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--text-primary);
+}
+
+/* Nav Search Bar */
+.nav-actions .search-bar {
+    background: var(--bg-surface);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid transparent;
+}
+
+.nav-actions .search-bar input {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    width: 200px;
+}
+
+.nav-actions .search-bar input::placeholder {
+    color: var(--text-secondary);
+}
+
+.nav-actions .search-bar i {
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   DISCOVER PAGE SPECIFIC STYLES
+   ========================================================================== */
+.discover-container {
+    padding: 2rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- Search Hero Section --- */
+.search-hero {
+    margin: 3rem 0 5rem 0;
+    text-align: center;
+}
+
+.search-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.main-search-box {
+    background: var(--bg-surface);
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 50px;
+    padding: 8px 8px 8px 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.main-search-box i {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.main-search-box input {
+    flex: 1;
+    border: none;
+    font-size: 1.1rem;
+    outline: none;
+    color: var(--text-primary);
+    background: transparent;
+}
+
+.main-search-box input::placeholder {
+    color: var(--text-secondary);
+}
+
+.main-search-box button {
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition-speed);
+}
+
+.main-search-box button:hover {
+    box-shadow: 0 4px 15px var(--accent-glow);
+    transform: scale(1.02);
+}
+
+.mobile-menu-btn {
+    display: none !important; /* The !important ensures it stays hidden on desktop */
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+/* --- Genre Grid --- */
+.category-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.genre-card {
+    height: 180px;
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.genre-card:hover {
+    transform: scale(1.03);
+}
+
+.genre-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+}
+
+.genre-card img {
+    position: absolute;
+    right: -20px;
+    bottom: -15px;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    transform: rotate(25deg);
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.4);
+    border-radius: 8px;
+}
+
+/* Category Colors */
+.color-1 { background: linear-gradient(135deg, #e1306c, #f56040); }
+.color-2 { background: linear-gradient(135deg, #5352ed, #1e90ff); }
+.color-3 { background: linear-gradient(135deg, #ffa502, #ff7f50); }
+.color-4 { background: linear-gradient(135deg, #009432, #00b894); }
+.color-5 { background: linear-gradient(135deg, #833471, #6F1E51); }
+.color-6 { background: linear-gradient(135deg, #12cbc4, #0652DD); }
+
+/* --- Horizontal Scroll (New Releases) --- */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+/* View All link matches the purple accent from your screenshot */
+.view-all {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+.horizontal-scroll {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-surface-hover) var(--bg-main);
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+.horizontal-scroll::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+.horizontal-scroll::-webkit-scrollbar-thumb {
+    background: var(--bg-surface-hover);
+    border-radius: 10px;
+}
+
+/* Cards styled like the Artist List in your image */
+.music-card-small {
+    min-width: 280px;
+    background: var(--bg-surface);
+    padding: 15px;
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: background var(--transition-speed);
+    cursor: pointer;
+}
+
+.music-card-small:hover {
+    background: var(--bg-surface-hover);
+}
+
+.music-card-small img {
+    width: 65px;
+    height: 65px;
+    border-radius: var(--border-radius-sm);
+    object-fit: cover;
+}
+
+.card-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.card-info p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.play-btn-mini {
+    margin-left: auto;
+    background: transparent;
+    border: 2px solid var(--text-secondary);
+    color: var(--text-primary);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-speed);
+}
+
+.music-card-small:hover .play-btn-mini {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}

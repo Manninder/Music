@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover | MelodyStream</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link with style sheet -->
+    <link rel="stylesheet" href="disStyle.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-headphones-simple"></i>
+                MELODY<span>STREAM</span>
+            </div>
+            
+            <div class="mobile-menu-btn" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Discover.html" class="active">Discover</a></li>
+                <li><a href="sub.html">Subscription</a></li>
+                <li><a href="library.html">Library</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="discover-container">
+        
+        <section class="search-hero">
+            <h1>Find your next favorite beat.</h1>
+            <div class="main-search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="mainSearchInput" placeholder="What do you want to listen to?">
+                <button>Search</button>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <h2 class="section-title">Browse All</h2>
+            <div class="genre-grid">
+                <div class="genre-card color-1">
+                    <h3>Punjabi Music</h3>
+                    <img src="https://images.unsplash.com/photo-1598387993441-a364f854c3e1?auto=format&fit=crop&w=300&q=80" alt="Punjabi">
+                </div>
+                <div class="genre-card color-2">
+                    <h3>Hip Hop</h3>
+                    <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=300&q=80" alt="Hip Hop">
+                </div>
+                <div class="genre-card color-3">
+                    <h3>Lofi Music</h3>
+                    <img src="lofi.jpeg" alt="Lofi">
+                </div>
+                <div class="genre-card color-4">
+                    <h3>Bollywood</h3>
+                    <img src="bolly.jpeg" alt="Bollywood">
+                </div>
+                <div class="genre-card color-5">
+                    <h3>Podcasts</h3>
+                    <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=300&q=80" alt="Podcast">
+                </div>
+                <div class="genre-card color-6">
+                    <h3>Workout</h3>
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=300&q=80" alt="Workout">
+                </div>
+            </div>
+        </section>
+
+        <section class="horizontal-section">
+            <div class="section-header">
+                <h2>New Releases</h2>
+                <a href="#" class="view-all">View All > </a>
+            </div>
+            
+            <div class="horizontal-scroll">
+                <div class="music-card-small">
+                    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=300&q=80" alt="Album Art">
+                    <div class="card-info">
+                        <h4>Midnight Rain</h4>
+                        <p>Taylor Swift</p>
+                    </div>
+                    <button class="play-btn-mini"><i class="fa-solid fa-play"></i></button>
+                </div>
+                <div class="music-card-small">
+                    <img src="Diljit/cover.jpeg" alt="Album Art">
+                    <div class="card-info">
+                        <h4>GOAT</h4>
+                        <p>Diljit Dosanjh</p>
+                    </div>
+                    <button class="play-btn-mini"><i class="fa-solid fa-play"></i></button>
+                </div>
+                <div class="music-card-small">
+                    <img src="star.jpeg" alt="Album Art">
+                    <div class="card-info">
+                        <h4>Starboy</h4>
+                        <p>The Weeknd</p>
+                    </div>
+                    <button class="play-btn-mini"><i class="fa-solid fa-play"></i></button>
+                </div>
+                <div class="music-card-small">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=300&q=80" alt="Album Art">
+                    <div class="card-info">
+                        <h4>Levels</h4>
+                        <p>Sidhu Moose Wala</p>
+                    </div>
+                    <button class="play-btn-mini"><i class="fa-solid fa-play"></i></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="mobile.js"></script>
+    <script>
+        // Simple script to toggle menu if mobile.js is missing
+        const toggleBtn = document.getElementById('menuToggle');
+        const nav = document.getElementById('navLinks');
+        if(toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+        }
+
+        // 1. Grab the search bar
+const searchInput = document.getElementById('mainSearchInput');
+
+// 2. Grab all the cards you want to search through (e.g., genre cards)
+const cards = document.querySelectorAll('.genre-card'); 
+
+// 3. Listen for every time the user types a letter
+searchInput.addEventListener('input', function(event) {
+    // Get the text the user typed and make it lowercase
+    const searchQuery = event.target.value.toLowerCase();
+
+    // Loop through all the cards
+    cards.forEach(card => {
+        // Find the <h3> text inside each card (e.g., "Punjabi Pop", "Hip Hop")
+        const cardTitle = card.querySelector('h3').innerText.toLowerCase();
+
+        // If the card title includes the letters typed in the search bar...
+        if (cardTitle.includes(searchQuery)) {
+            card.style.display = 'block'; // Show it
+        } else {
+            card.style.display = 'none';  // Hide it
+        }
+    });
+});
+    </script>
+</body>
+</html>

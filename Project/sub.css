@@ -1,0 +1,689 @@
+/* ==========================================================================
+   MELODYSTREAM - FULL UNIFIED STYLESHEET (CORRECTED)
+   ========================================================================== */
+
+:root {
+    /* --- Core Color Palette --- */
+    --bg-main: #0c101b;             
+    --bg-surface: #151a28;          
+    --bg-surface-hover: #1f273b;    
+    
+    /* --- Brand/Accent Colors --- */
+    --accent-color: #c75cff;        
+    --accent-gradient: linear-gradient(90deg, #a855f7, #d946ef);
+    --accent-glow: rgba(199, 92, 255, 0.4);
+    
+    /* --- Typography Colors --- */
+    --text-primary: #ffffff;        
+    --text-secondary: #94a3b8;      
+    
+    /* --- Utilities --- */
+    --border-radius-lg: 16px;
+    --border-radius-sm: 8px;
+    --transition-speed: 0.3s ease;
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed);
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+   HEADER & NAVBAR (FIXED)
+   ========================================================================== */
+header {
+    background-color: var(--bg-main);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Keeps logo left, links right */
+    align-items: center;
+    padding: 1rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 80px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+}
+
+.logo i, .logo span {
+    color: var(--accent-color);
+}
+
+/* 🚨 FIX: Force hide the mobile button on desktop 🚨 */
+.mobile-menu-btn {
+    display: none !important; 
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-links li a {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--text-primary);
+}
+
+.nav-actions .search-bar {
+    background: var(--bg-surface);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid transparent;
+}
+
+.nav-actions .search-bar input {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    width: 200px;
+}
+
+.nav-actions .search-bar input::placeholder {
+    color: var(--text-secondary);
+}
+
+.nav-actions .search-bar i {
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   HOME / INDEX PAGE STYLES
+   ========================================================================== */
+.hero {
+    height: 70vh;
+    min-height: 500px;
+    background: linear-gradient(to right, rgba(12,16,27,1) 0%, rgba(12,16,27,0.4) 100%), 
+                url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.trending-tag {
+    background: var(--bg-surface);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-play {
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.btn-play:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--accent-glow);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--text-secondary);
+    color: var(--text-primary);
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-speed);
+}
+
+.btn-outline:hover {
+    border-color: var(--text-primary);
+    background: rgba(255,255,255,0.05);
+}
+
+.music-grid {
+    padding: 4rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--bg-surface);
+    padding: 1rem;
+    border-radius: var(--border-radius-lg);
+    transition: background var(--transition-speed);
+    position: relative;
+}
+
+.card:hover {
+    background: var(--bg-surface-hover);
+}
+
+.card-img {
+    position: relative;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    margin-bottom: 1rem;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img img {
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: var(--accent-color);
+    color: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    z-index: 2;
+}
+
+.card:hover .play-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.card p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   DISCOVER PAGE STYLES
+   ========================================================================== */
+.discover-container {
+    padding: 2rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.search-hero {
+    margin: 3rem 0 5rem 0;
+    text-align: center;
+}
+
+.search-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.main-search-box {
+    background: var(--bg-surface);
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    border-radius: 50px;
+    padding: 8px 8px 8px 24px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.main-search-box i {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.main-search-box input {
+    flex: 1;
+    border: none;
+    font-size: 1.1rem;
+    outline: none;
+    color: var(--text-primary);
+    background: transparent;
+}
+
+.main-search-box input::placeholder {
+    color: var(--text-secondary);
+}
+
+.main-search-box button {
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition-speed);
+}
+
+.main-search-box button:hover {
+    box-shadow: 0 4px 15px var(--accent-glow);
+    transform: scale(1.02);
+}
+
+.category-section {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.genre-card {
+    height: 180px;
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.genre-card:hover {
+    transform: scale(1.03);
+}
+
+.genre-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+}
+
+.genre-card img {
+    position: absolute;
+    right: -20px;
+    bottom: -15px;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    transform: rotate(25deg);
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.4);
+    border-radius: 8px;
+}
+
+.color-1 { background: linear-gradient(135deg, #e1306c, #f56040); }
+.color-2 { background: linear-gradient(135deg, #5352ed, #1e90ff); }
+.color-3 { background: linear-gradient(135deg, #ffa502, #ff7f50); }
+.color-4 { background: linear-gradient(135deg, #009432, #00b894); }
+.color-5 { background: linear-gradient(135deg, #833471, #6F1E51); }
+.color-6 { background: linear-gradient(135deg, #12cbc4, #0652DD); }
+
+/* ==========================================================================
+   SUBSCRIPTION PAGE STYLES (FIXED)
+   ========================================================================== */
+.subscription-container {
+    padding: 4rem 5%;
+    max-width: 1200px; /* Reduced max-width slightly to keep cards tight */
+    margin: 0 auto;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.pricing-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.pricing-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* 🚨 FIX: Reduced minmax to 280px so all 3 cards fit on normal laptops 🚨 */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: stretch; /* Forces all cards to be the same height */
+    justify-content: center;
+}
+
+.pricing-card {
+    background: var(--bg-surface);
+    border-radius: var(--border-radius-lg);
+    padding: 3rem 2rem;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column; /* Helps push the button to the bottom */
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: var(--bg-surface-hover);
+}
+
+.pricing-card.popular {
+    border: 2px solid var(--accent-color);
+    background: linear-gradient(180deg, rgba(21, 26, 40, 1) 0%, rgba(199, 92, 255, 0.05) 100%);
+    transform: scale(1.03); /* Scaled down slightly so it doesn't break grid */
+    z-index: 2;
+}
+
+.pricing-card.popular:hover {
+    transform: scale(1.03) translateY(-5px);
+    box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-gradient);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px var(--accent-glow);
+    white-space: nowrap;
+}
+
+.pricing-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.plan-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.price h2 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.price span {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+/* Pushes the feature list up and leaves space for the button at the bottom */
+.features-list {
+    margin-bottom: 2.5rem;
+    flex-grow: 1; 
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.features-list li i.fa-check {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+
+.features-list li.disabled {
+    color: var(--text-secondary);
+}
+
+.features-list li.disabled i.fa-xmark {
+    color: #ef4444; 
+}
+
+.btn-primary-sub {
+    width: 100%;
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-speed);
+    margin-top: auto; /* Pushes button to bottom */
+}
+
+.btn-primary-sub:hover {
+    box-shadow: 0 5px 20px var(--accent-glow);
+}
+
+.btn-outline-sub {
+    width: 100%;
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--text-secondary);
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-speed);
+    margin-top: auto; /* Pushes button to bottom */
+}
+
+.btn-outline-sub:hover {
+    border-color: var(--text-primary);
+    background: rgba(255,255,255,0.05);
+}
+
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================================================== */
+
+/* Tablets & Small Desktops */
+@media (max-width: 900px) {
+    
+    .nav-actions .search-bar {
+        display: none; 
+    }
+    
+    /* 🚨 FIX: Menu button only shows here now 🚨 */
+    .mobile-menu-btn {
+        display: block !important;
+        position: absolute;
+        right: 5%;
+        top: 25px;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        background: var(--bg-surface);
+        flex-direction: column;
+        justify-content: center;
+        width: 70%;
+        transition: right 0.3s ease;
+        z-index: 999;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links .nav-actions .search-bar {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .pricing-card.popular {
+        transform: scale(1);
+    }
+    .pricing-card.popular:hover {
+        transform: scale(1) translateY(-5px);
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+    .hero {
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .hero-btns {
+        justify-content: center;
+    }
+    
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .genre-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .pricing-header h1 {
+        font-size: 2.2rem;
+    }
+}
