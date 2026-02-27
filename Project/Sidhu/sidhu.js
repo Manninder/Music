@@ -10,16 +10,16 @@ let masterSongName = document.getElementById('masterSongName'); // This now exis
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    {songName: "Asi Oh Hunne Aa", filePath: "1.mp3", coverPath: "cover.jpeg"},
-    {songName: "Desi Da Drum", filePath: "2.mp3", coverPath: "cover.jpeg"},
-    {songName: "Double Black", filePath: "3.mp3", coverPath: "cover.jpeg"},
-    {songName: "Feels", filePath: "4.mp3", coverPath: "cover.jpeg"},
-    {songName: "Germun Gun", filePath: "5.mp3", coverPath: "cover.jpeg"},
-    {songName: "Jatt Flex", filePath: "6.mp3", coverPath: "cover.jpeg"},
-    {songName: "Kaali Camaro", filePath: "7.mp3", coverPath: "cover.jpeg"},
-    {songName: "Paid Off", filePath: "8.mp3", coverPath: "cover.jpeg"},
-    {songName: "Power House", filePath: "9.mp3", coverPath: "cover.jpeg"},
-    {songName: "President", filePath: "10.mp3", coverPath: "cover.jpeg"}
+    {songName: "295", filePath: "1.mp3", coverPath: "cover.jpeg"},
+    {songName: "So High", filePath: "2.mp3", coverPath: "cover.jpeg"},
+    {songName: "Same Beef", filePath: "3.mp3", coverPath: "cover.jpeg"},
+    {songName: "Legend", filePath: "4.mp3", coverPath: "cover.jpeg"},
+    {songName: "The Last Ride", filePath: "5.mp3", coverPath: "cover.jpeg"},
+    {songName: "B-Town", filePath: "6.mp3", coverPath: "cover.jpeg"},
+    {songName: "Drippy", filePath: "7.mp3", coverPath: "cover.jpeg"},
+    {songName: "East Side Flow", filePath: "8.mp3", coverPath: "cover.jpeg"},
+    {songName: "Bambhia Bole", filePath: "9.mp3", coverPath: "cover.jpeg"},
+    {songName: "Tibeyan Da Putt", filePath: "10.mp3", coverPath: "cover.jpeg"}
 ];
 
 // 2. Map Songs to UI
@@ -104,19 +104,19 @@ const playSelectedSong = () => {
     document.getElementById(songIndex).classList.add('fa-pause');
 };
 
-//  Mobile Menu Toggle JS 
+//  Mobile Menu Toggle JS
 
-const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        const icon = menuToggle.querySelector('i');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const icon = menuToggle.querySelector('i');
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        });
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        if (navLinks.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+        } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+});

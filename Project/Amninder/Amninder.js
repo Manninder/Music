@@ -10,16 +10,16 @@ let masterSongName = document.getElementById('masterSongName'); // This now exis
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    {songName: "Asi Oh Hunne Aa", filePath: "1.mp3", coverPath: "cover.jpeg"},
-    {songName: "Desi Da Drum", filePath: "2.mp3", coverPath: "cover.jpeg"},
-    {songName: "Double Black", filePath: "3.mp3", coverPath: "cover.jpeg"},
-    {songName: "Feels", filePath: "4.mp3", coverPath: "cover.jpeg"},
-    {songName: "Germun Gun", filePath: "5.mp3", coverPath: "cover.jpeg"},
-    {songName: "Jatt Flex", filePath: "6.mp3", coverPath: "cover.jpeg"},
-    {songName: "Kaali Camaro", filePath: "7.mp3", coverPath: "cover.jpeg"},
-    {songName: "Paid Off", filePath: "8.mp3", coverPath: "cover.jpeg"},
-    {songName: "Power House", filePath: "9.mp3", coverPath: "cover.jpeg"},
-    {songName: "President", filePath: "10.mp3", coverPath: "cover.jpeg"}
+    {songName: "Akhar", filePath: "1.mp3", coverPath: "cover.jpeg"},
+    {songName: "2 Number", filePath: "2.mp3", coverPath: "cover.jpeg"},
+    {songName: "Asi Gabru Punjabi", filePath: "3.mp3", coverPath: "cover.jpeg"},
+    {songName: "Boliyan", filePath: "4.mp3", coverPath: "cover.jpeg"},
+    {songName: "Chal Jindiye", filePath: "5.mp3", coverPath: "cover.jpeg"},
+    {songName: "Ki Samjhaiye", filePath: "6.mp3", coverPath: "cover.jpeg"},
+    {songName: "Leekan", filePath: "7.mp3", coverPath: "cover.jpeg"},
+    {songName: "Sohni Kuri", filePath: "8.mp3", coverPath: "cover.jpeg"},
+    {songName: "Mathi Mathi", filePath: "9.mp3", coverPath: "cover.jpeg"},
+    {songName: "Vanjali Waja", filePath: "10.mp3", coverPath: "cover.jpeg"}
 ];
 
 // 2. Map Songs to UI
@@ -104,7 +104,7 @@ const playSelectedSong = () => {
     document.getElementById(songIndex).classList.add('fa-pause');
 };
 
-//  Mobile Menu Toggle JS 
+// Mobile Menu Toggle JS
 
 const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');

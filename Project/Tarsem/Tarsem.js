@@ -10,16 +10,16 @@ let masterSongName = document.getElementById('masterSongName'); // This now exis
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    {songName: "Asi Oh Hunne Aa", filePath: "1.mp3", coverPath: "cover.jpeg"},
-    {songName: "Desi Da Drum", filePath: "2.mp3", coverPath: "cover.jpeg"},
-    {songName: "Double Black", filePath: "3.mp3", coverPath: "cover.jpeg"},
-    {songName: "Feels", filePath: "4.mp3", coverPath: "cover.jpeg"},
-    {songName: "Germun Gun", filePath: "5.mp3", coverPath: "cover.jpeg"},
-    {songName: "Jatt Flex", filePath: "6.mp3", coverPath: "cover.jpeg"},
-    {songName: "Kaali Camaro", filePath: "7.mp3", coverPath: "cover.jpeg"},
-    {songName: "Paid Off", filePath: "8.mp3", coverPath: "cover.jpeg"},
-    {songName: "Power House", filePath: "9.mp3", coverPath: "cover.jpeg"},
-    {songName: "President", filePath: "10.mp3", coverPath: "cover.jpeg"}
+    {songName: "American Bull", filePath: "1.mp3", coverPath: "cover.jpeg"},
+    {songName: "Aunda Sardar", filePath: "2.mp3", coverPath: "cover.jpeg"},
+    {songName: "BFAM", filePath: "3.mp3", coverPath: "cover.jpeg"},
+    {songName: "Happiness", filePath: "4.mp3", coverPath: "cover.jpeg"},
+    {songName: "Kingpin", filePath: "5.mp3", coverPath: "cover.jpeg"},
+    {songName: "Kingpin: Next Episode", filePath: "6.mp3", coverPath: "cover.jpeg"},
+    {songName: "Life", filePath: "7.mp3", coverPath: "cover.jpeg"},
+    {songName: "No Count", filePath: "8.mp3", coverPath: "cover.jpeg"},
+    {songName: "Turbanator", filePath: "9.mp3", coverPath: "cover.jpeg"},
+    {songName: "Wrangler", filePath: "10.mp3", coverPath: "cover.jpeg"}
 ];
 
 // 2. Map Songs to UI
@@ -104,7 +104,7 @@ const playSelectedSong = () => {
     document.getElementById(songIndex).classList.add('fa-pause');
 };
 
-//  Mobile Menu Toggle JS 
+// Mobile Menu Toggle JS
 
 const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
